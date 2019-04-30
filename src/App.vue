@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img class="illustration" alt="Шахматная доска" src="./assets/board.svg">
+    <Board />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Board from '@/components/Board.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
-}
+    Board,
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+@media (min-width: 768px) {
+  #app {
+    flex-direction: row;
+    justify-content: unset;
+    max-width: 768px;
+  }
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
 }
 </style>
